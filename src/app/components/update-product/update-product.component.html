@@ -1,0 +1,56 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitformProductUpdate()">
+  
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>
+        Title
+      </nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input nz-input formControlName="title" placeholder="Theory title" />
+      </nz-form-control>
+    </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Description
+      </nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <textarea
+          nz-input
+          formControlName="description"
+          placeholder="Brief description of the theory..."
+          rows="4"
+        ></textarea>
+      </nz-form-control>
+    </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Category
+      </nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input nz-input formControlName="category" placeholder="Enter category" />
+      </nz-form-control>
+    </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7"nzRequired>Popularity</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <nz-input-number
+          formControlName="popularity"
+          nzPlaceHolder="0-100"
+          [nzMin]="0"
+          [nzMax]="100"
+          [nzStep]="1"
+        ></nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+    
+
+    <nz-form-item>
+      <nz-form-control
+        [nzXs]="{ span: 24, offset: 0 }"
+        [nzSm]="{ span: 16, offset: 8 }"
+      >
+        <button nz-button nzType="primary">Save Theory</button>
+      </nz-form-control>
+    </nz-form-item>
+    
+  </form>

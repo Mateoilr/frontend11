@@ -1,0 +1,27 @@
+<h1>Theories List</h1>
+<nz-table #basicTable [nzData]="theory" [nzBordered]="true">
+  <thead>
+    <tr>
+      <th nzWidth="20%">Name</th>
+      <th nzWidth="20%">Description</th>
+      <th nzWidth="20%">Category</th>
+      <th nzWidth="20%">Popularity</th>
+      <th nzWidth="10%">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of theory; track $index) {
+      <tr>
+      <td>{{ item.title }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.category }}</td>
+      <td>{{ item.popularity }}</td>
+      <td>
+        
+        <button nz-button (click)="selecttheory(item)">Edit</button>
+      <button nz-button nzDanger (click)="deletetheory(item.id)">Delete</button>
+      </td>  
+    </tr>
+    }
+  </tbody>
+</nz-table>
